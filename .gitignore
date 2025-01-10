@@ -1,14 +1,1 @@
-/Challenge
-/exsports.py
-/jobs.csv
-/main.py
-/MakeTeam.py
-/PythonCasino.py
-/saku.py
-/templates
-/URLFormating.py
-/webs1.py
-/webs2-2.py
-/webs2.py
-/webs3.py
-/__pycache__
+.env
