@@ -1,8 +1,12 @@
 from bs4 import BeautifulSoup
 import requests
+import certifi
 import urllib.request as ulr
 from dotenv import load_dotenv
 import os
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 load_dotenv()
 
@@ -10,7 +14,7 @@ local_path = os.environ.get("local_path")
 
 def blog(url):
     path = f"{local_path}\\HINATA"
-    r = requests.get(url)
+    r = requests.get(url, verify=certifi.where())
     soup = BeautifulSoup(r.content, "html.parser")
 
     date = soup.find("div", class_="c-blog-article__date").text.replace("\n","").split(" ")[0].replace(".","-")
